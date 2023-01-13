@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body style="background-color:pink">
+<center>
+<form action='givetask' method="post">
+    {% csrf_token %}
+    <h1 style="color:blue">Assign task to student</h1>
+    <h2><table>
+        <tr><td>Left:</td><td><select name="left">
+    <option>one</option>
+    <option>two</option>
+    <option>three</option>
+    <option>four</option>
+    <option>five</option>
+    <option>six</option>
+    <option>seven</option>
+    <option>eight</option>
+    <option>nine</option>
+    <option>zero</option>
+</select></td></tr>
+        <tr><td>Operation:</td><td><select name="operations">
+    <option>plus</option>
+    <option>minus</option>
+    <option>times</option>
+    <option>div</option>
+</select></td></tr>
+        <tr><td>Right:</td><td><select name="right">
+    <option>zero</option>
+    <option>one</option>
+    <option>two</option>
+    <option>three</option>
+    <option>four</option>
+    <option>five</option>
+    <option>six</option>
+    <option>seven</option>
+    <option>eight</option>
+    <option>nine</option>
+</select></td></tr>
+        <tr><td>Student:</td><td><select name="ddl_stu">
+        {% for i in data %}
+        <option>{{ i.Name }}</option>
+        {% endfor %}
+        </select></td></tr>
+        <tr ><td><input type="submit" value="Create task"></td></tr>
+    </table>
+</h2>
+</form>
+</center>
+</body>
+</html>

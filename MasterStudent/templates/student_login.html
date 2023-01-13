@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:pink">
+<h1 align="center">Student Login page</h1>
+<form action="readstudent" method="post">
+    {% csrf_token %}
+    <h3 align="center" style="color:red">{{ d }}</h3>
+    <h2><table align="center">
+        <tr><td>UserName:</td><td><input type="text" name="s_username"></td></tr>
+        <tr><td>Password:</td><td> <input type="password" name="s_pass"></td></tr>
+        <tr><td><input type="submit" value="Login"></td>
+        <td><a href="{% url 'sr' %}">Register</a></td></tr>
+    </table></h2>
+</form>
+</body>
+</html>

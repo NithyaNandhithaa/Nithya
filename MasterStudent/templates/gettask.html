@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:lightpink">
+<center>
+    <h1><span style="color:blue"><u>Task</u></span></h1>
+    <h2>
+<table border="1" bgcolor="white">
+    <tr>
+        <th>Left</th>
+        <th>Right</th>
+        <th>Operation</th>
+        <th>StudentName</th>
+        <th>click</th>
+    </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ i.Left }}</td>
+            <td>{{ i.Right }}</td>
+            <td>{{ i.Operation }}</td>
+            <td>{{ i.Student_id }}</td>
+            <td><a href="{% url 'solve' i.id %}">Solve</a></td>
+        </tr>
+        {% endfor %}
+</table>
+    <h1><span style="color:blue">{{ sol }}</span></h1>
+</h2>
+    </center>
+</body>
+</html>
